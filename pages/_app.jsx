@@ -1,7 +1,12 @@
-import '../styles/globals.scss'
-import 'tailwindcss/tailwind.css'
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+import "../styles/globals.scss";
+import "tailwindcss/tailwind.css";
+import { Layout } from "../components";
+const MyApp = ({ Component, pageProps }) => {
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
+};
 
-export default MyApp
+export default MyApp;
