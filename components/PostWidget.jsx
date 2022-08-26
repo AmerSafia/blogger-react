@@ -8,9 +8,10 @@ const PostWidget = ({ categories, slug }) => {
 
   useEffect(() => {
     if (slug) {
-      getSimilarPosts(categories, slug).then((result) =>
-        setRelatedPosts(result)
-      );
+      getSimilarPosts(categories, slug).then((result) => {
+        console.log(result, "setRelatedPosts");
+        setRelatedPosts(result);
+      });
     } else {
       getRecentPosts().then((result) => setRelatedPosts(result));
     }
@@ -35,7 +36,11 @@ const PostWidget = ({ categories, slug }) => {
             <p className=" text-gray-500 font-xs">
               {moment(post.createdAt).format("MMM DD,YYYY")}
             </p>
-            <Link href={`/post/${post.slug}`} className=" text-md" key={post.title}>
+            <Link
+              href={`/post/${post.slug}`}
+              className=" text-md"
+              key={post.title}
+            >
               {post.title}
             </Link>
           </div>

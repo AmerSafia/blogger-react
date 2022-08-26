@@ -1,7 +1,5 @@
-import Head from "next/head";
 import { PostCard, Categories, PostWidget } from "../components";
 import { getPosts } from "../services";
-
 
 
 const Home = ({posts}) => {
@@ -24,7 +22,6 @@ const Home = ({posts}) => {
     </div>
   );
 };
-
 export default Home;
 
 export const getStaticProps = async () => {
