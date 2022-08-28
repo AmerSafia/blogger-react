@@ -1,9 +1,8 @@
-import { PostCard, Categories, PostWidget } from "../components";
 import FeaturedPosts from "../sections/FeaturedPosts";
-import { getPosts } from "../services";
+import { PostCard, Categories, PostWidget } from '../components';
+import { getPosts } from '../services';
 
-
-const Home = ({posts}) => {
+export default function Home({ posts }) {
   return (
     <div className="container mx-auto px-10 mb-8">
       <FeaturedPosts />
@@ -22,12 +21,12 @@ const Home = ({posts}) => {
       </div>
     </div>
   );
-};
-export default Home;
+}
 
-export const getStaticProps = async () => {
+// Fetch data at build time
+export async function getServerSideProps() {
   const posts = (await getPosts()) || [];
   return {
     props: { posts },
   };
-};
+}
