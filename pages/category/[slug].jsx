@@ -39,9 +39,7 @@ export const getStaticProps = async({ params:{slug}})=> {
   };
 }
 
-// Specify dynamic routes to pre-render pages based on data.
-// The HTML is generated at build time and will be reused on each request.
-export async function getStaticPaths() {
+export async function getServerSideProps() {
   const categories = await getCategories();
   return {
     paths: categories.map(({ slug }) => ({ params: { slug } })),
