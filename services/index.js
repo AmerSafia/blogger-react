@@ -6,5 +6,6 @@ export { default as getPostDetails } from './getPostDetails'
 export { default as postComment } from './postComment'
 export { default as getComments } from './getComments'
 export { default as getFeaturedPosts } from './getFeaturedPosts'
+export { default as getCategoryPost } from './getCategoryPost'
 
 
